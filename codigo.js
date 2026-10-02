@@ -6,9 +6,9 @@ function executar() { // Declara a função executar; () indica que não recebe 
     camera.position.z = 80; // Define a posição da câmera no eixo Z.
     camera.position.y = 10; // Define a posição da câmera no eixo Y.
 
-    renderizador = new THREE.WebGLRenderer({ antilias: true }); // Cria o renderizador WebGL; true ativa a opção informada no objeto.
+    renderizador = new THREE.WebGLRenderer({ antialias: true, alpha: true }); // Cria o renderizador WebGL; alpha habilita fundo transparente.
     renderizador.setSize(500, 500); // setSize define largura e altura da renderização.
-    renderizador.setClearColor(0xffffff, 1); // Define fundo branco; 1 representa opacidade total.
+    renderizador.setClearColor(0x000000, 0); // Fundo transparente para mostrar o CSS.
 
     painel = document.getElementById("modelo"); // Busca no HTML o elemento cujo id é "modelo".
     painel.appendChild(renderizador.domElement); // Insere no painel o canvas criado pelo renderizador.

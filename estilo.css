@@ -1,10 +1,28 @@
-h1 { /* Seleciona todas as tags h1. */
-    text-align: center; /* Centraliza horizontalmente o texto. */
-} /* Fim das regras do h1. */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* Ocupa a altura total da tela */
+}
 
-#modelo { /* #modelo seleciona o elemento com id="modelo". */
-    width: 500px; /* Define largura de 500 pixels. */
-    height: 500px; /* Define altura de 500 pixels. */
-    background-color: red; /* Define o fundo como vermelho. */
-    margin: 0 auto; /* Zera margem vertical e centraliza horizontalmente. */
-} /* Fim das regras de #modelo. */
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+#modelo {
+    width: 500px;
+    height: 500px;
+    background: linear-gradient(135deg, #87CEEB, #e0f6ff); /* Fundo com gradiente simulando o céu */
+    border-radius: 20px; /* Bordas arredondadas */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Sombra elegante */
+    overflow: hidden; /* Corta o excesso nos cantos arredondados */
+}
