@@ -1,20 +1,27 @@
-<!DOCTYPE html> <!-- Define o documento como HTML5. -->
-
-<head> <!-- Ãrea de configuraÃ§Ãµes da pÃ¡gina. -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>3ª Avaliação - Computação Gráfica</title>
     <link rel="stylesheet" href="estilo.css">
-    <!-- link importa arquivo externo; rel define CSS; href informa o caminho. -->
-</head> <!-- Fim do head. -->
-
-<body> <!-- InÃ­cio do conteÃºdo visÃ­vel da pÃ¡gina. -->
+</head>
+<body>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <!-- script carrega JavaScript; src informa o endereÃ§o da biblioteca Three.js. -->
-    <script src="codigo.js"></script> <!-- Carrega o arquivo JavaScript local codigo.js. -->
     <script src="https://cdn.jsdelivr.net/gh/mrdoob/three.js@r128/examples/js/loaders/GLTFLoader.js"></script>
-    <!-- Carrega o GLTFLoader, usado para abrir modelos GLTF/GLB. -->
+    <script src="codigo.js"></script>
 
-    <h1>Exemplo - Site com modelo 3D</h1> <!-- h1 cria o tÃ­tulo principal da pÃ¡gina. -->
+    <h1>3ª Avaliação - Computação Gráfica</h1>
 
-    <div id="modelo"></div> <!-- div cria um contÃªiner; id="modelo" identifica a Ã¡rea usada pelo CSS e JavaScript. -->
-</body> <!-- Fim do body. -->
+    <div class="container-modelos">
+        <div class="cartao-modelo">
+            <h2 id="nome-aluno-1">Aluno 1</h2>
+            <div id="modelo1" class="canvas-container"></div>
+        </div>
 
-</html> <!-- Fim do documento HTML. -->
+        <div class="cartao-modelo">
+            <h2 id="nome-aluno-2">Aluno 2</h2>
+            <div id="modelo2" class="canvas-container"></div>
+        </div>
+    </div>
+</body>
+</html>

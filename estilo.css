@@ -8,7 +8,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 100vh; /* Ocupa a altura total da tela */
+    min-height: 100vh;
 }
 
 h1 {
@@ -18,11 +18,30 @@ h1 {
     font-weight: 600;
 }
 
-#modelo {
-    width: 500px;
-    height: 500px;
-    background: linear-gradient(135deg, #87CEEB, #e0f6ff); /* Fundo com gradiente simulando o céu */
-    border-radius: 20px; /* Bordas arredondadas */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Sombra elegante */
-    overflow: hidden; /* Corta o excesso nos cantos arredondados */
+.container-modelos {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.cartao-modelo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cartao-modelo h2 {
+    color: #4a5568;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.canvas-container {
+    width: 400px;
+    height: 400px;
+    background: linear-gradient(135deg, #87CEEB, #e0f6ff);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
 }
