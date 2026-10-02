@@ -1,4 +1,4 @@
-﻿// =======================================================
+// =======================================================
 // ALUNO: Edite apenas as variáveis abaixo
 // =======================================================
 const nomeAluno1 = "Insira o nome do Aluno 1 aqui";
@@ -27,9 +27,14 @@ function criarCena(containerId, arquivoGLB) {
     controles.enableDamping = true; // Adiciona inércia/suavidade ao girar
     controles.dampingFactor = 0.05;
 
-    const luz = new THREE.DirectionalLight(0xffffff, 1);
-    luz.position.set(5, 5, 5);
-    cena.add(luz);
+    // Adiciona uma luz ambiente (ilumina o objeto inteiro por igual, removendo as partes pretas)
+    const luzAmbiente = new THREE.AmbientLight(0xffffff, 0.7);
+    cena.add(luzAmbiente);
+
+    // Mantém a luz direcional para dar profundidade e brilho
+    const luzDirecional = new THREE.DirectionalLight(0xffffff, 0.8);
+    luzDirecional.position.set(5, 10, 5);
+    cena.add(luzDirecional);
 
     const loader = new THREE.GLTFLoader();
     loader.load(arquivoGLB, function (gltf) {
