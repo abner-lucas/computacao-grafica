@@ -1,0 +1,10 @@
+h1 { /* Seleciona todas as tags h1. */
+    text-align: center; /* Centraliza horizontalmente o texto. */
+} /* Fim das regras do h1. */
+
+#modelo { /* #modelo seleciona o elemento com id="modelo". */
+    width: 500px; /* Define largura de 500 pixels. */
+    height: 500px; /* Define altura de 500 pixels. */
+    background-color: red; /* Define o fundo como vermelho. */
+    margin: 0 auto; /* Zera margem vertical e centraliza horizontalmente. */
+} /* Fim das regras de #modelo. */
