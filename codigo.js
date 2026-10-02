@@ -1,5 +1,5 @@
-// =======================================================
-// ALUNO: Edite apenas as vari�veis abaixo
+﻿// =======================================================
+// ALUNO: Edite apenas as variáveis abaixo
 // =======================================================
 const nomeAluno1 = "Insira o nome do Aluno 1 aqui";
 const arquivoGLB_Aluno1 = "./aviaozinho.glb"; // Insira o caminho do arquivo GLB
@@ -22,6 +22,11 @@ function criarCena(containerId, arquivoGLB) {
     const painel = document.getElementById(containerId);
     painel.appendChild(renderizador.domElement);
 
+    // Configurando os controles de órbita (Mouse)
+    const controles = new THREE.OrbitControls(camera, renderizador.domElement);
+    controles.enableDamping = true; // Adiciona inércia/suavidade ao girar
+    controles.dampingFactor = 0.05;
+
     const luz = new THREE.DirectionalLight(0xffffff, 1);
     luz.position.set(5, 5, 5);
     cena.add(luz);
@@ -36,7 +41,10 @@ function criarCena(containerId, arquivoGLB) {
 
         function animarModelo() {
             requestAnimationFrame(animarModelo);
-            modelo.rotation.y += 0.01;
+            
+            // Atualiza os controles para o efeito de inércia funcionar
+            controles.update();
+            
             renderizador.render(cena, camera);
         }
         animarModelo();
