@@ -1,56 +1,72 @@
-﻿body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f0f2f5;
-    color: #333;
-    margin: 0;
+﻿/* ========================================================================= */
+/* ARQUIVO DE ESTILOS (CSS) - Define as cores, tamanhos e posições dos elementos */
+/* ========================================================================= */
+
+/* Configurações gerais da página inteira */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Define o estilo da fonte */
+    background-color: #f0f2f5; /* Cor de fundo cinza bem clarinho */
+    color: #333; /* Cor do texto em tom de cinza escuro */
+    margin: 0; /* Remove a margem padrão do navegador */
     padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
+    
+    /* Configurações do Flexbox (para centralizar tudo no meio da tela) */
+    display: flex; 
+    flex-direction: column; /* Coloca os elementos um embaixo do outro (título em cima, cartões em baixo) */
+    align-items: center; /* Centraliza os elementos horizontalmente */
+    justify-content: center; /* Centraliza verticalmente */
+    min-height: 100vh; /* Garante que a página ocupe pelo menos 100% da altura da tela */
 }
 
+/* Estilo do título principal */
 h1 {
-    text-align: center;
-    color: #2c3e50;
-    margin-bottom: 30px;
-    font-weight: 600;
+    text-align: center; /* Texto centralizado */
+    color: #2c3e50; /* Azul escuro */
+    margin-bottom: 30px; /* Dá um espaço entre o título e os cartões abaixo dele */
+    font-weight: 600; /* Deixa o texto mais gordinho (negrito) */
 }
 
+/* Container que envolve os dois cartões */
 .container-modelos {
-    display: flex;
-    gap: 40px;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: flex; /* Permite colocar os cartões lado a lado */
+    gap: 40px; /* Cria um espaço de 40 pixels entre os dois cartões */
+    flex-wrap: wrap; /* Se a tela for pequena (celular), joga o segundo cartão para a linha de baixo */
+    justify-content: center; /* Mantém tudo centralizado */
 }
 
+/* Estilo de cada cartão (bloco individual de cada aluno) */
 .cartao-modelo {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: column; /* Organiza nome -> modelo -> descrição um abaixo do outro */
+    align-items: center; /* Centraliza o conteúdo dentro do cartão */
 }
 
+/* Estilo apenas para os nomes dos alunos (os <h2> dentro dos cartões) */
 .cartao-modelo h2 {
     color: #4a5568;
-    font-size: 1.2rem;
-    margin-bottom: 15px;
+    font-size: 1.2rem; /* Tamanho da fonte */
+    margin-bottom: 15px; /* Espaço entre o nome e a tela 3D */
 }
 
+/* Estilo da 'tela' onde o modelo 3D é renderizado */
 .canvas-container {
-    width: 400px;
-    height: 400px;
-    background: linear-gradient(135deg, #87CEEB, #e0f6ff);
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-    overflow: hidden;
+    width: 400px; /* Largura da tela 3D */
+    height: 400px; /* Altura da tela 3D */
+    
+    /* Cria aquele fundo bonito parecendo um céu azul */
+    background: linear-gradient(135deg, #87CEEB, #e0f6ff); 
+    
+    border-radius: 20px; /* Deixa as bordas arredondadas (mais suave) */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Adiciona a sombra embaixo da caixa */
+    overflow: hidden; /* Corta as pontas do canvas interno para respeitar as bordas arredondadas */
 }
 
+/* Estilo da descrição do objeto (os parágrafos logo abaixo do modelo 3D) */
 .descricao-modelo {
-    max-width: 400px;
+    max-width: 400px; /* Impede que o texto fique mais largo que a própria caixa 3D */
     text-align: center;
     color: #555;
-    font-size: 0.95rem;
-    margin-top: 15px;
-    line-height: 1.4;
+    font-size: 0.95rem; /* Letra um pouco menor */
+    margin-top: 15px; /* Espaço entre a caixa 3D e o texto */
+    line-height: 1.4; /* Espaço confortável entre as linhas do texto */
 }
