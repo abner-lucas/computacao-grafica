@@ -3,9 +3,11 @@
 // =======================================================
 const nomeAluno1 = "Insira o nome do Aluno 1 aqui";
 const arquivoGLB_Aluno1 = "./aviaozinho.glb"; // Insira o caminho do arquivo GLB
+const descricao_Aluno1 = "Descreva seu objeto aqui (ex: Avião de papel modelado no Blender...)";
 
 const nomeAluno2 = "Insira o nome do Aluno 2 aqui";
 const arquivoGLB_Aluno2 = "./aviaozinho.glb"; // Insira o caminho do arquivo GLB
+const descricao_Aluno2 = "Descreva seu objeto aqui (ex: Avião de papel modelado no Blender...)";
 // =======================================================
 
 function criarCena(containerId, arquivoGLB) {
@@ -58,7 +60,10 @@ function criarCena(containerId, arquivoGLB) {
 
 window.onload = function() {
     document.getElementById("nome-aluno-1").innerText = nomeAluno1;
+    document.getElementById("desc-aluno-1").innerText = descricao_Aluno1;
+    
     document.getElementById("nome-aluno-2").innerText = nomeAluno2;
+    document.getElementById("desc-aluno-2").innerText = descricao_Aluno2;
     
     criarCena("modelo1", arquivoGLB_Aluno1);
     criarCena("modelo2", arquivoGLB_Aluno2);

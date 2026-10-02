@@ -45,3 +45,12 @@ h1 {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
     overflow: hidden;
 }
+
+.descricao-modelo {
+    max-width: 400px;
+    text-align: center;
+    color: #555;
+    font-size: 0.95rem;
+    margin-top: 15px;
+    line-height: 1.4;
+}
