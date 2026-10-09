@@ -37,6 +37,10 @@ computacao-grafica/
 │       ├── estilo.css                   # Estilização com cartões com visual de céu
 │       └── aviaozinho.glb               # Modelo 3D de referência
 │
+├── 🌐 Geo3D Lab Interativo (Online)     # [Projeto 03] Laboratório e Avaliação de Geometria 3D
+│   ├── Deploy em Produção:              # https://geo3d-lab-interativo.vercel.app/
+│   └── Repositório Oficial:             # https://github.com/abner-lucas/geo3d-lab-interativo-cg
+│
 ├── LICENSE                              # Licença de uso
 └── README.md                            # Documentação geral do repositório
 ```

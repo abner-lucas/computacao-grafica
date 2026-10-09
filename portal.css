@@ -380,7 +380,7 @@ section {
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 32px;
 }
 
@@ -413,6 +413,10 @@ section {
 
 .card-top-banner.banner-secondary {
   background: linear-gradient(135deg, #1e3a8a 0%, #0284c7 100%);
+}
+
+.card-top-banner.banner-purple {
+  background: linear-gradient(135deg, #4338ca 0%, #7c3aed 100%);
 }
 
 .project-meta-badge {
@@ -845,3 +849,4 @@ footer {
     gap: 12px;
   }
 }
+
