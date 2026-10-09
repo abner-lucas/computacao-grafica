@@ -1,4 +1,4 @@
-﻿/* ========================================================================= */
+/* ========================================================================= */
 /* ARQUIVO DE ESTILOS (CSS) - Define as cores, tamanhos e posições dos elementos */
 /* ========================================================================= */
 
@@ -14,8 +14,50 @@ body {
     display: flex; 
     flex-direction: column; /* Coloca os elementos um embaixo do outro (título em cima, cartões em baixo) */
     align-items: center; /* Centraliza os elementos horizontalmente */
-    justify-content: center; /* Centraliza verticalmente */
+    justify-content: flex-start; /* Alinhamento ao topo para acomodar a barra */
     min-height: 100vh; /* Garante que a página ocupe pelo menos 100% da altura da tela */
+}
+
+/* Barra de navegação superior */
+.barra-navegacao {
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 24px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
+}
+
+.barra-navegacao a {
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 6px;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.barra-navegacao .link-voltar {
+    color: #4b5563;
+}
+
+.barra-navegacao .link-voltar:hover {
+    color: #111827;
+    background-color: #f3f4f6;
+}
+
+.barra-navegacao .link-orientacoes {
+    color: #2563eb;
+    background-color: #eff6ff;
+}
+
+.barra-navegacao .link-orientacoes:hover {
+    color: #1d4ed8;
+    background-color: #dbeafe;
 }
 
 /* Estilo do título principal */

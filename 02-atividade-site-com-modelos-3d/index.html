@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 02 - Site com Modelos 3D | Computação Gráfica</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-hover: #1d4ed8;
+            --bg: #f8fafc;
+            --text-dark: #0f172a;
+            --text-muted: #64748b;
+            --card-border: #e2e8f0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text-dark);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background: white;
+            border-bottom: 1px solid var(--card-border);
+            padding: 16px 24px;
+        }
+
+        .header-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--primary-hover);
+            text-decoration: underline;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+            flex: 1;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #e0f2fe;
+            color: #0284c7;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 999px;
+            margin-bottom: 12px;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            letter-spacing: -0.02em;
+            margin-bottom: 8px;
+        }
+
+        p.lead {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            line-height: 1.5;
+            margin-bottom: 32px;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+        }
+
+        .card {
+            background: white;
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 28px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
+            border-color: #cbd5e1;
+        }
+
+        .card-icon {
+            font-size: 2rem;
+            margin-bottom: 16px;
+            display: inline-block;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--text-dark);
+        }
+
+        .card-desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-bottom: 24px;
+            flex: 1;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+            padding: 12px 20px;
+            border-radius: 10px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-hover);
+        }
+
+        .btn-secondary {
+            background: #f1f5f9;
+            color: #334155;
+            border: 1px solid #cbd5e1;
+        }
+
+        .btn-secondary:hover {
+            background: #e2e8f0;
+            color: #0f172a;
+        }
+
+        footer {
+            text-align: center;
+            padding: 24px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            border-top: 1px solid var(--card-border);
+            background: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="../index.html" class="back-link">← Voltar ao Portal da Disciplina</a>
+            <span style="font-size: 0.85rem; color: #64748b; font-weight: 500;">IFPA Campus Breves</span>
+        </div>
+    </header>
+
+    <main>
+        <span class="badge">Atividade 02 · 3ª Avaliação</span>
+        <h1>Criação de Site com Modelos 3D</h1>
+        <p class="lead">Esta atividade é dividida no roteiro didático passo a passo e no projeto base de código (template) que a dupla utilizará para visualização dos modelos.</p>
+
+        <div class="cards-grid">
+            <div class="card">
+                <div>
+                    <span class="card-icon">📖</span>
+                    <h2 class="card-title">Roteiro e Orientações</h2>
+                    <p class="card-desc">Guia detalhado com os 6 passos da atividade: modelagem no Tinkercad, exportação GLB, integração com Three.js, testes locais, publicação no Tiiny.host e entrega no Classroom.</p>
+                </div>
+                <a href="./pagina-orientacoes/dist/index.html" class="btn btn-primary">
+                    Acessar Roteiro da Atividade →
+                </a>
+            </div>
+
+            <div class="card">
+                <div>
+                    <span class="card-icon">🧊</span>
+                    <h2 class="card-title">Template dos Alunos (Webpage 3D)</h2>
+                    <p class="card-desc">Projeto base contendo a página HTML com visualização dupla interativa para os modelos 3D dos dois integrantes, controles de órbita do mouse e estilização moderna.</p>
+                </div>
+                <a href="./webpage-modelo-3d/index.html" class="btn btn-secondary">
+                    Abrir Template Webpage 3D →
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        Computação Gráfica &bull; Professor Ábner Lucas &bull; IFPA Campus Breves
+    </footer>
+</body>
+</html>

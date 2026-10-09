@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR"> <!-- Define o tipo de documento e o idioma (Português do Brasil) -->
+<head>
+    <meta charset="UTF-8"> <!-- Configura a codificação de caracteres para aceitar acentos e cedilha -->
+    <title>3ª Avaliação - Computação Gráfica</title> <!-- O texto que aparece na aba do navegador -->
+    
+    <!-- Link para importar as regras de estilo visuais criadas no arquivo CSS -->
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <!-- ===================================================================== -->
+    <!-- 1. IMPORTAÇÃO DE BIBLIOTECAS (Scripts externos)                       -->
+    <!-- ===================================================================== -->
+    
+    <!-- Carrega a biblioteca principal do Three.js (responsável pelos gráficos 3D) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    
+    <!-- Carrega o carregador específico de modelos GLTF/GLB (formato dos objetos 3D) -->
+    <script src="https://cdn.jsdelivr.net/gh/mrdoob/three.js@r128/examples/js/loaders/GLTFLoader.js"></script>
+    
+    <!-- Carrega o OrbitControls, que permite interagir e girar o modelo com o mouse -->
+    <script src="https://cdn.jsdelivr.net/gh/mrdoob/three.js@r128/examples/js/controls/OrbitControls.js"></script>
+    
+    <!-- Carrega o nosso próprio código JavaScript, onde configuramos a cena -->
+    <script src="codigo.js"></script>
+
+
+    <!-- ===================================================================== -->
+    <!-- 2. ESTRUTURA VISUAL DA PÁGINA (Elementos HTML)                        -->
+    <!-- ===================================================================== -->
+    
+    <nav class="barra-navegacao">
+        <a href="../../index.html" class="link-voltar">← Voltar ao Portal</a>
+        <a href="../pagina-orientacoes/dist/index.html" class="link-orientacoes">📖 Roteiro de Orientações da Atividade</a>
+    </nav>
+
+    <h1>3ª Avaliação - Computação Gráfica</h1> <!-- Título principal da página -->
+
+    <!-- Container principal que agrupa e organiza os dois cartões lado a lado usando CSS -->
+    <div class="container-modelos">
+        
+        <!-- Cartão do Primeiro Aluno -->
+        <div class="cartao-modelo">
+            <!-- Título que receberá o nome via JavaScript -->
+            <h2 id="nome-aluno-1">Aluno 1</h2>
+            
+            <!-- Div vazia que funcionará como a 'tela' onde o modelo 3D será desenhado pelo Three.js -->
+            <div id="modelo1" class="canvas-container"></div>
+            
+            <!-- Parágrafo que receberá a descrição do modelo via JavaScript -->
+            <p id="desc-aluno-1" class="descricao-modelo"></p>
+        </div>
+
+        <!-- Cartão do Segundo Aluno -->
+        <div class="cartao-modelo">
+            <h2 id="nome-aluno-2">Aluno 2</h2>
+            <div id="modelo2" class="canvas-container"></div>
+            <p id="desc-aluno-2" class="descricao-modelo"></p>
+        </div>
+        
+    </div>
+</body>
+</html>

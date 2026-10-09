@@ -1,58 +1,408 @@
-﻿<!DOCTYPE html>
-<html lang="pt-BR"> <!-- Define o tipo de documento e o idioma (Português do Brasil) -->
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8"> <!-- Configura a codificação de caracteres para aceitar acentos e cedilha -->
-    <title>3ª Avaliação - Computação Gráfica</title> <!-- O texto que aparece na aba do navegador -->
-    
-    <!-- Link para importar as regras de estilo visuais criadas no arquivo CSS -->
-    <link rel="stylesheet" href="estilo.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal de Computação Gráfica | IFPA Campus Breves</title>
+    <meta name="description" content="Portal acadêmico da disciplina de Computação Gráfica - IFPA Campus Breves. Projetos práticos, visualizadores 3D interativos com Three.js e roteiros didáticos.">
+
+    <!-- Tipografia moderna -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Folha de Estilos do Portal -->
+    <link rel="stylesheet" href="portal.css">
+
+    <!-- Three.js CDN para o elemento 3D interativo do Portal -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="portal.js" defer></script>
 </head>
 <body>
-    <!-- ===================================================================== -->
-    <!-- 1. IMPORTAÇÃO DE BIBLIOTECAS (Scripts externos)                       -->
-    <!-- ===================================================================== -->
-    
-    <!-- Carrega a biblioteca principal do Three.js (responsável pelos gráficos 3D) -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    
-    <!-- Carrega o carregador específico de modelos GLTF/GLB (formato dos objetos 3D) -->
-    <script src="https://cdn.jsdelivr.net/gh/mrdoob/three.js@r128/examples/js/loaders/GLTFLoader.js"></script>
-    
-    <!-- Carrega o OrbitControls, que permite interagir e girar o modelo com o mouse -->
-    <script src="https://cdn.jsdelivr.net/gh/mrdoob/three.js@r128/examples/js/controls/OrbitControls.js"></script>
-    
-    <!-- Carrega o nosso próprio código JavaScript, onde configuramos a cena -->
-    <script src="codigo.js"></script>
-
 
     <!-- ===================================================================== -->
-    <!-- 2. ESTRUTURA VISUAL DA PÁGINA (Elementos HTML)                        -->
+    <!-- 1. BARRA DE NAVEGAÇÃO SUPERIOR                                       -->
     <!-- ===================================================================== -->
-    
-    <h1>3ª Avaliação - Computação Gráfica</h1> <!-- Título principal da página -->
+    <header class="top-navbar">
+        <div class="container nav-container">
+            <a href="#inicio" class="brand-wrapper">
+                <div class="brand-icon">🧊</div>
+                <div class="brand-text">
+                    <h1>Computação Gráfica</h1>
+                    <p>IFPA Campus Breves</p>
+                </div>
+            </a>
 
-    <!-- Container principal que agrupa e organiza os dois cartões lado a lado usando CSS -->
-    <div class="container-modelos">
-        
-        <!-- Cartão do Primeiro Aluno -->
-        <div class="cartao-modelo">
-            <!-- Título que receberá o nome via JavaScript -->
-            <h2 id="nome-aluno-1">Aluno 1</h2>
-            
-            <!-- Div vazia que funcionará como a 'tela' onde o modelo 3D será desenhado pelo Three.js -->
-            <div id="modelo1" class="canvas-container"></div>
-            
-            <!-- Parágrafo que receberá a descrição do modelo via JavaScript -->
-            <p id="desc-aluno-1" class="descricao-modelo"></p>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#projetos">Projetos & Atividades</a></li>
+                    <li><a href="#trilha">Trilha de Aprendizado</a></li>
+                    <li><a href="#recursos">Recursos & Ferramentas</a></li>
+                    <li><a href="#docente">Docente</a></li>
+                    <li><a href="#projetos" class="nav-cta">Acessar Projetos</a></li>
+                </ul>
+            </nav>
         </div>
+    </header>
 
-        <!-- Cartão do Segundo Aluno -->
-        <div class="cartao-modelo">
-            <h2 id="nome-aluno-2">Aluno 2</h2>
-            <div id="modelo2" class="canvas-container"></div>
-            <p id="desc-aluno-2" class="descricao-modelo"></p>
+    <!-- ===================================================================== -->
+    <!-- 2. HERO SECTION COM CANVAS 3D INTERATIVO                              -->
+    <!-- ===================================================================== -->
+    <section id="inicio" class="hero-section">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="pulse-dot"></span>
+                    <span>Portal Acadêmico Oficial · 2026</span>
+                </div>
+
+                <h1 class="hero-title">
+                    Explore o Universo da <span>Computação Gráfica</span> na Web
+                </h1>
+
+                <p class="hero-description">
+                    Bem-vindo ao portal central da disciplina. Aqui você encontra os projetos práticos, roteiros didáticos passo a passo, modelos 3D interativos desenvolvidos com Three.js e WebGL, além dos materiais de apoio para as avaliações.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="#projetos" class="btn-main">
+                        <span>Explorar Projetos Práticos</span>
+                        <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                        </svg>
+                    </a>
+                    <a href="./02-atividade-site-com-modelos-3d/pagina-orientacoes/dist/index.html" class="btn-secondary">
+                        <span>📖 Roteiro da 3ª Avaliação</span>
+                    </a>
+                </div>
+
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <h4>WebGL</h4>
+                        <p>Renderização 3D nativa</p>
+                    </div>
+                    <div class="stat-item">
+                        <h4>Three.js</h4>
+                        <p>Motor gráfico no navegador</p>
+                    </div>
+                    <div class="stat-item">
+                        <h4>Tinkercad</h4>
+                        <p>Modelagem e malhas .glb</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Visualizador 3D Interativo Hero -->
+            <div class="hero-canvas-wrapper" title="Interaja movendo o cursor sobre a forma geométrica 3D">
+                <div id="hero-3d-canvas"></div>
+                <div class="canvas-hint">
+                    <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122" />
+                    </svg>
+                    <span>Mova o mouse para interagir</span>
+                </div>
+            </div>
         </div>
-        
-    </div>
+    </section>
+
+    <!-- ===================================================================== -->
+    <!-- 3. SEÇÃO DE PROJETOS E ATIVIDADES                                     -->
+    <!-- ===================================================================== -->
+    <section id="projetos">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Projetos & Práticas</span>
+                <h2 class="section-title">Projetos Desenvolvidos na Disciplina</h2>
+                <p class="section-subtitle">
+                    Acesse as implementações práticas de computação gráfica, desde a introdução básica a modelos 3D até a atividade completa de publicação web em duplas.
+                </p>
+            </div>
+
+            <div class="projects-grid">
+                <!-- CARD PROJETO 01 -->
+                <article class="project-card">
+                    <div class="card-top-banner">
+                        <div>
+                            <span class="project-meta-badge">Demonstração Inicial</span>
+                        </div>
+                        <span class="project-number">01</span>
+                    </div>
+
+                    <div class="card-body">
+                        <h3 class="project-title">01 — Página com 3D (Projeto Pioneiro)</h3>
+                        <p class="project-description">
+                            Primeiro projeto prático apresentado na disciplina. Introduz os conceitos fundamentais da renderização 3D no navegador web: instanciação da cena Three.js, perspectiva de câmera, iluminação direcional e o carregamento de uma malha tridimensional (<code>aviaozinho.glb</code>) com rotação contínua através do loop de animação <code>requestAnimationFrame</code>.
+                        </p>
+
+                        <div class="tech-tags">
+                            <span class="tech-tag">Three.js r128</span>
+                            <span class="tech-tag">WebGL</span>
+                            <span class="tech-tag">GLTFLoader</span>
+                            <span class="tech-tag">HTML5 / CSS3</span>
+                        </div>
+
+                        <div class="subproject-box">
+                            <div class="subproject-header">
+                                <span class="subproject-icon">✈️</span>
+                                <h4 class="subproject-title">Visualizador Simples do Aviãozinho</h4>
+                            </div>
+                            <p class="subproject-desc">
+                                Demonstração objetiva e didática com código amplamente comentado para fixação dos conceitos iniciais de cena, câmera e malhas.
+                            </p>
+                        </div>
+
+                        <div class="card-footer-actions">
+                            <a href="./01-pagina-com-3d/index.html" class="btn-card btn-card-primary">
+                                <span>Abrir Projeto 01</span>
+                                <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                </svg>
+                            </a>
+                            <a href="https://github.com/abner-lucas/computacao-grafica/tree/master/01-pagina-com-3d" target="_blank" rel="noopener noreferrer" class="btn-card btn-card-outline">
+                                <span>Código Fonte</span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- CARD PROJETO 02 -->
+                <article class="project-card">
+                    <div class="card-top-banner banner-secondary">
+                        <div>
+                            <span class="project-meta-badge">3ª Avaliação · Trabalho em Duplas</span>
+                        </div>
+                        <span class="project-number">02</span>
+                    </div>
+
+                    <div class="card-body">
+                        <h3 class="project-title">02 — Atividade: Site com Modelos 3D</h3>
+                        <p class="project-description">
+                            Atividade prática avaliativa integrando modelagem autoral no Tinkercad com exportação <code>.glb</code>, controles de órbita via mouse (<code>OrbitControls</code>) com amortecimento suave e publicação online gratuita. Esta atividade é composta por duas frentes complementares:
+                        </p>
+
+                        <div class="tech-tags">
+                            <span class="tech-tag">Tinkercad</span>
+                            <span class="tech-tag">OrbitControls</span>
+                            <span class="tech-tag">Tiiny.host</span>
+                            <span class="tech-tag">Trabalho em Duplas</span>
+                        </div>
+
+                        <!-- Sub-bloco A: Roteiro -->
+                        <div class="subproject-box">
+                            <div class="subproject-header">
+                                <span class="subproject-icon">📖</span>
+                                <h4 class="subproject-title">Guia & Roteiro de Orientações da Atividade</h4>
+                            </div>
+                            <p class="subproject-desc">
+                                Guia interativo completo com o passo a passo dos 6 estágios, gerador de ZIP para download dos arquivos base, tabela de critérios avaliativos e dicas técnicas.
+                            </p>
+                            <a href="./02-atividade-site-com-modelos-3d/pagina-orientacoes/dist/index.html" class="btn-card btn-card-primary" style="padding: 8px 14px; font-size: 0.85rem; width: 100%;">
+                                <span>Acessar Roteiro de Orientações →</span>
+                            </a>
+                        </div>
+
+                        <!-- Sub-bloco B: Template dos Alunos -->
+                        <div class="subproject-box">
+                            <div class="subproject-header">
+                                <span class="subproject-icon">💻</span>
+                                <h4 class="subproject-title">Template dos Alunos (Webpage Modelo 3D)</h4>
+                            </div>
+                            <p class="subproject-desc">
+                                Projeto base pré-configurado contendo layout em cartões duplos lado a lado, área de inserção de nomes, descrições e carregamento dos arquivos GLB de ambos os alunos.
+                            </p>
+                            <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                                <a href="./02-atividade-site-com-modelos-3d/webpage-modelo-3d/index.html" class="btn-card btn-card-outline" style="padding: 8px 14px; font-size: 0.85rem; flex: 1;">
+                                    <span>Abrir Template Local →</span>
+                                </a>
+                                <a href="https://abner-lucas.github.io/webpage-modelo-3d/" target="_blank" rel="noopener noreferrer" class="btn-card btn-card-outline" style="padding: 8px 14px; font-size: 0.85rem;">
+                                    <span>Demo Online (Pages) ↗</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="card-footer-actions">
+                            <a href="./02-atividade-site-com-modelos-3d/index.html" class="btn-card btn-card-primary">
+                                <span>Central da Atividade 02</span>
+                                <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================================================================== -->
+    <!-- 4. TRILHA DE APRENDIZADO                                             -->
+    <!-- ===================================================================== -->
+    <section id="trilha" style="background-color: #ffffff; border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border);">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Currículo Didático</span>
+                <h2 class="section-title">Trilha de Aprendizado em 3D</h2>
+                <p class="section-subtitle">
+                    A jornada de construção do conhecimento desde os princípios geométricos até a entrega do projeto em produção.
+                </p>
+            </div>
+
+            <div class="learning-timeline">
+                <div class="timeline-step">
+                    <div class="step-num">01</div>
+                    <h3 class="step-title">Espaço Tridimensional & Câmera</h3>
+                    <p class="step-description">
+                        Compreensão do sistema de coordenadas cartesianas (X, Y, Z), campos de visão (FOV), planos de corte (near/far) e projeção em perspectiva matemática.
+                    </p>
+                </div>
+
+                <div class="timeline-step">
+                    <div class="step-num">02</div>
+                    <h3 class="step-title">Modelagem 3D & Formatos Web</h3>
+                    <p class="step-description">
+                        Criação de geometrias no Autodesk Tinkercad e Blender, composição de sólidos, manipulação de malhas poligonais e exportação no formato padrão GLTF / GLB.
+                    </p>
+                </div>
+
+                <div class="timeline-step">
+                    <div class="step-num">03</div>
+                    <h3 class="step-title">Three.js & Interatividade</h3>
+                    <p class="step-description">
+                        Inicialização da cena, materiais, iluminação ambiente e direcional para sombreamento, controles de rotação de mouse com OrbitControls e loop de renderização.
+                    </p>
+                </div>
+
+                <div class="timeline-step">
+                    <div class="step-num">04</div>
+                    <h3 class="step-title">Publicação & Entrega</h3>
+                    <p class="step-description">
+                        Empacotamento dos 5 arquivos essenciais (HTML, CSS, JS e GLB), testes em ambiente local e hospedagem estática online no Tiiny.host para submissão no Classroom.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================================================================== -->
+    <!-- 5. RECURSOS E FERRAMENTAS DE APOIO                                   -->
+    <!-- ===================================================================== -->
+    <section id="recursos">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Ecossistema de Desenvolvimento</span>
+                <h2 class="section-title">Recursos & Ferramentas Recomendadas</h2>
+                <p class="section-subtitle">
+                    Acesse as plataformas e documentações oficiais utilizadas durante as aulas práticas e atividades.
+                </p>
+            </div>
+
+            <div class="resources-grid">
+                <a href="https://threejs.org/docs/" target="_blank" rel="noopener noreferrer" class="resource-card">
+                    <div class="resource-icon-box">🌐</div>
+                    <h3 class="resource-name">Three.js Docs <span class="resource-ext-icon">↗</span></h3>
+                    <p class="resource-desc">Documentação oficial com referências de API completas, exemplos de iluminação, câmeras, loaders e controles.</p>
+                    <span class="resource-badge">Documentação Oficial</span>
+                </a>
+
+                <a href="https://www.tinkercad.com/" target="_blank" rel="noopener noreferrer" class="resource-card">
+                    <div class="resource-icon-box">📐</div>
+                    <h3 class="resource-name">Autodesk Tinkercad <span class="resource-ext-icon">↗</span></h3>
+                    <p class="resource-desc">Ferramenta gratuita de modelagem 3D intuitiva no navegador, ideal para criação rápida de modelos exportáveis para .glb.</p>
+                    <span class="resource-badge">Modelagem 3D</span>
+                </a>
+
+                <a href="https://tiiny.host/" target="_blank" rel="noopener noreferrer" class="resource-card">
+                    <div class="resource-icon-box">☁️</div>
+                    <h3 class="resource-name">Tiiny.host <span class="resource-ext-icon">↗</span></h3>
+                    <p class="resource-desc">Plataforma recomendada para hospedar o projeto estático compactado em ZIP de forma rápida e gerar link público.</p>
+                    <span class="resource-badge">Hospedagem Web</span>
+                </a>
+
+                <a href="https://gltf-viewer.donmccurdy.com/" target="_blank" rel="noopener noreferrer" class="resource-card">
+                    <div class="resource-icon-box">🔍</div>
+                    <h3 class="resource-name">glTF Viewer (Don McCurdy) <span class="resource-ext-icon">↗</span></h3>
+                    <p class="resource-desc">Visualizador e validador online de arquivos .gltf e .glb para inspecionar malhas, nós e materiais antes de incluir no site.</p>
+                    <span class="resource-badge">Validador 3D</span>
+                </a>
+
+                <a href="https://classroom.google.com/" target="_blank" rel="noopener noreferrer" class="resource-card">
+                    <div class="resource-icon-box">🎓</div>
+                    <h3 class="resource-name">Google Classroom <span class="resource-ext-icon">↗</span></h3>
+                    <p class="resource-desc">Ambiente virtual de aprendizagem do IFPA para envio das atividades, acompanhamento de notas e avisos da turma.</p>
+                    <span class="resource-badge">Ambiente Virtual</span>
+                </a>
+
+                <a href="https://code.visualstudio.com/" target="_blank" rel="noopener noreferrer" class="resource-card">
+                    <div class="resource-icon-box">⚡</div>
+                    <h3 class="resource-name">VS Code + Live Server <span class="resource-ext-icon">↗</span></h3>
+                    <p class="resource-desc">Editor recomendado para desenvolvimento web. A extensão Live Server evita problemas de CORS ao carregar modelos locais.</p>
+                    <span class="resource-badge">Ambiente Local</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================================================================== -->
+    <!-- 6. IDENTIFICAÇÃO DOCENTE & INSTITUCIONAL                             -->
+    <!-- ===================================================================== -->
+    <section id="docente" style="padding-top: 20px;">
+        <div class="container">
+            <div class="teacher-banner">
+                <div class="teacher-avatar-box">
+                    👨‍🏫
+                </div>
+                <div class="teacher-info">
+                    <h3>Prof. Me. Ábner Lucas</h3>
+                    <p class="teacher-role">Docente da Disciplina de Computação Gráfica / Programação Web</p>
+                    <p class="teacher-bio">
+                        Instituto Federal de Educação, Ciência e Tecnologia do Pará (IFPA) — Campus Breves.<br>
+                        Comprometido com o ensino prático de tecnologias abertas, computação visual e desenvolvimento web moderno na região do Marajó.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================================================================== -->
+    <!-- 7. RODAPÉ INSTITUCIONAL                                               -->
+    <!-- ===================================================================== -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h4>🧊 Computação Gráfica · IFPA</h4>
+                    <p>
+                        Portal didático oficial da disciplina de Computação Gráfica. Desenvolvido para centralizar projetos práticos, roteiros de aula e materiais interativos com Three.js e WebGL.
+                    </p>
+                </div>
+
+                <div class="footer-col">
+                    <h5>Navegação</h5>
+                    <ul class="footer-links">
+                        <li><a href="#inicio">Início</a></li>
+                        <li><a href="#projetos">Projetos & Atividades</a></li>
+                        <li><a href="#trilha">Trilha de Aprendizado</a></li>
+                        <li><a href="#recursos">Recursos de Apoio</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h5>Projetos Práticos</h5>
+                    <ul class="footer-links">
+                        <li><a href="./01-pagina-com-3d/index.html">01 — Página com 3D</a></li>
+                        <li><a href="./02-atividade-site-com-modelos-3d/pagina-orientacoes/dist/index.html">02 — Roteiro da Atividade</a></li>
+                        <li><a href="./02-atividade-site-com-modelos-3d/webpage-modelo-3d/index.html">02 — Template dos Alunos</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 IFPA Campus Breves · Professor Ábner Lucas · Computação Gráfica</p>
+                <p><a href="#inicio" style="color: #60a5fa; text-decoration: none;">↑ Voltar ao Topo</a></p>
+            </div>
+        </div>
+    </footer>
+
 </body>
 </html>

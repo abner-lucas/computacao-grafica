@@ -1,0 +1,25 @@
+<!DOCTYPE html> <!-- Define o documento como HTML5. -->
+
+<head> <!-- Área de configurações da página. -->
+    <link rel="stylesheet" href="estilo.css">
+    <!-- link importa arquivo externo; rel define CSS; href informa o caminho. -->
+</head> <!-- Fim do head. -->
+
+<body> <!-- Início do conteúdo visível da página. -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <!-- script carrega JavaScript; src informa o endereço da biblioteca Three.js. -->
+    <script src="codigo.js"></script> <!-- Carrega o arquivo JavaScript local codigo.js. -->
+    <script src="https://cdn.jsdelivr.net/gh/mrdoob/three.js@r128/examples/js/loaders/GLTFLoader.js"></script>
+    <!-- Carrega o GLTFLoader, usado para abrir modelos GLTF/GLB. -->
+
+    <header class="barra-navegacao">
+        <a href="../index.html" class="link-voltar">← Voltar ao Portal da Disciplina</a>
+        <span class="tag-projeto">Projeto 01 — Demonstração Three.js</span>
+    </header>
+
+    <h1>Exemplo - Site com modelo 3D</h1> <!-- h1 cria o título principal da página. -->
+
+    <div id="modelo"></div> <!-- div cria um contêiner; id="modelo" identifica a área usada pelo CSS e JavaScript. -->
+</body> <!-- Fim do body. -->
+
+</html> <!-- Fim do documento HTML. -->
